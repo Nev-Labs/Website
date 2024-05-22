@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<ContentSection title="About" id="intro">
+
+  <Fragment slot="lead">
+    This is the official programming club for 
+    <span class="text-primary">OIST</span> Bhopal
+    <span class="text-primary"></span>
+    
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="https://www.instagram.com/debug.oist"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="fa-brands:instagram" class="size-8" />
+      <span>Github</span>
+    </a>
+    <a
+      href="https://discord.gg/cVYDxXkm"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:rocket" class="size-8" />
+      <span>Discord</span>
+    </a>
+  </div>
+</ContentSection>
