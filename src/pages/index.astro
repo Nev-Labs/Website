@@ -7,6 +7,7 @@ import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
+
 const { generator, site } = Astro;
 const image = new URL("", site);
 const description =
@@ -15,8 +16,21 @@ const description =
 
 <!doctype html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
+  <head> 
+    <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "qSoF6JRdyvPFqtYXc0VY2",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="qSoF6JRdyvPFqtYXc0VY2"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+
+  <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <meta name="generator" content={generator} />
@@ -33,7 +47,7 @@ const description =
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- initialize theme -->
-    <script is:inline>
+      <script is:inline>
       const themeSaved = localStorage.getItem("theme");
 
       if (themeSaved) {
@@ -54,8 +68,10 @@ const description =
               : "light";
           }
         });
-    </script>
+</script>
+
   </head>
+
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
@@ -66,5 +82,10 @@ const description =
       <Showcase />
     </div>
     <Footer />
+
+
   </body>
+
+
+
 </html>
