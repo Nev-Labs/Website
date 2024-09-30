@@ -3,20 +3,27 @@ import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
+interface Props {
+  isEventsPage?: boolean;
+}
+
+const { isEventsPage = false } = Astro.props;
+
 const navItems: Array<NavItem> = [
-  
-  { title: "About", url: "#intro" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "About", url: "/#intro" },
+  { title: "Showcase", url: "/#showcase" },
+  { title: "Events", url: "/events" }, // Add this line to include a link to the events page
 ];
+
+const headerClass = isEventsPage
+  ? "fixed top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white bg-default"
+  : "absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white";
 ---
 
-<header
-  id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
->
+<header id="page-header" class={headerClass}>
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <p class="gradient-text text-center font-extrabold tracking-tight text-2xl ">Debug</p>
+    <p class="gradient-text text-center font-extrabold tracking-tight text-2xl">Debug</p>
   </a>
   <div>
     <div class="flex items-center gap-6">

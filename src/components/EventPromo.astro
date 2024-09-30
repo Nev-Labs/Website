@@ -1,0 +1,28 @@
+---
+import poster from "~/assets/poster.jpg";
+import { Image } from "astro:assets";
+// EventPromo.astro
+---
+
+<div class="flex flex-col items-center max-w-md mx-auto">
+    <Image
+      src={poster}
+      alt="Web Sprint Event Promotion" 
+      class="w-full h-auto mb-4 rounded-lg shadow-lg"
+    />
+    <button 
+      class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+      id="registerButton"
+    >
+      Register Now
+    </button>
+  </div>
+  
+  <script>
+import { navigate } from "astro:transitions/client";
+
+    document.getElementById('registerButton').addEventListener('click', () => {
+      navigate('https://forms.gle/2cQr3PRV9NJk8pTq5')
+      console.log('Register button clicked');
+    });
+  </script>

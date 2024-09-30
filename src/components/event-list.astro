@@ -1,0 +1,21 @@
+---
+// ~/components/event-list.astro
+const { events } = Astro.props;
+---
+
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {events.map((event) => (
+    <div key={event.id} class="bg-offset p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-2">{event.title}</h2>
+      <p class="text-sm mb-2"><strong>Date:</strong> {event.date}</p>
+      <p class="text-sm mb-4"><strong>Location:</strong> {event.location}</p>
+      <p class="text-sm mb-4">{event.description}</p>
+      <a
+        href={event.registrationLink}
+        class="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors"
+      >
+        Register Now
+      </a>
+    </div>
+  ))}
+</div>
