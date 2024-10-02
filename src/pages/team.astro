@@ -1,0 +1,74 @@
+---
+import TeamMember from '../components/TeamMember.astro';
+
+const teamMembers = [
+  {
+    name: "Ashish Baghel",
+    position: "President",
+    image: "/images/team/Ashish.jpg",
+    bio: "Ashish is the President of our club. He specialises in Open Source Contributions."
+  },
+  {
+    name: "Shiv Vardhan Singh",
+    position: "Vice President",
+image: "/images/team/Shiv.jpg",
+    bio: "Shiv specialises in current emerging web technologies"
+  },
+  {
+    name: "Devashish mishra",
+    position: "Tech Lead",
+    image: "/images/team/Devashish.jpg",
+    bio: "Devashish ensures smooth day-to-day operations and has a keen eye for efficiency."
+},{
+    name: "Dhruv Bhardwaj",
+    position: "Tech Lead",
+    image: "/images/team/dhruv.jpg",
+    bio: "Dhruv ensures smooth day-to-day operations and has a keen eye for efficiency."
+},{
+    name: "Akansha Jha",
+    position: "Event Head",
+    image: "/images/team/Akansha.jpg",
+bio: "Akansha is the key event organiser and manager in our community ensuring the smooth ongoing of Events organised by/in community."
+},{
+name: "Nalin Dalal",
+position:"Open Source Maintainer",
+images:"/images/team/nalin.jpg",
+bio:"Nalin is the key joining all these technologies and github maintainer in the core community team."
+},
+{
+name: "Muskan Soni",
+position:"Marketing Head",
+images:"/images/team/muskan.jpg",
+bio:"Muskan is our Chief Marketing officer ensuring the advertisment of our community so that pther people may come to know us."
+},
+{
+name: "Shiwang Kumar Rai",
+position:"Head Discipline",
+images:"/images/team/Shiwang.jpg",
+bio:"Shiwang is our Discipline officer, ensuring the deadlines and work are met as per the criteria."
+},
+];
+---
+
+<html>
+  <head>
+    <title>Our Team</title>
+  </head>
+  <body>
+    <h1>Meet Our Team</h1>
+    <div class="team-container">
+      {teamMembers.map((member) => (
+        <TeamMember {...member} />
+      ))}
+    </div>
+  </body>
+</html>
+
+<style>
+  .team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+

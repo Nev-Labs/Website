@@ -1,0 +1,32 @@
+---
+export interface TeamMemberProps {
+  name: string;
+  position: string;
+  image: string;
+  bio: string;
+}
+
+const { name, position, image, bio } = Astro.props;
+---
+
+<div class="team-member">
+  <img src={image} alt={name} class="team-member-image" />
+  <h3>{name}</h3>
+  <p><strong>{position}</strong></p>
+  <p>{bio}</p>
+</div>
+
+<style>
+  .team-member {
+    text-align: center;
+    margin: 20px;
+  }
+  .team-member-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+</style>
+
