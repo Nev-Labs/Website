@@ -9,7 +9,7 @@ const { generator, site } = Astro;
 const image = new URL("social-image.jpg", site);
 const description = "Join our exciting hackathon events for tech enthusiasts!";
 
-const upcomingEvents = [
+const completedEvents = [
   {
     id: 1,
     title: "Web Sprint",
@@ -70,7 +70,7 @@ const upcomingEvents = [
   >
     <Header isEventsPage={true} />
     <main class="space-y-24 px-8 py-32 pt-40"> <!-- Added pt-40 for top padding -->
-      <h1 class="text-center text-5xl font-bold">Upcoming Hackathon Events</h1>
+      <h1 class="text-center text-5xl font-bold">Happened Hackathon Events</h1>
       <EventPromo />
       <!-- <EventList events={upcomingEvents} /> -->
     </main>
