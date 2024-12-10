@@ -12,7 +12,8 @@ const { isEventsPage = false } = Astro.props;
 const navItems: Array<NavItem> = [
   { title: "About", url: "/#intro" },
   { title: "Showcase", url: "/#showcase" },
-  { title: "Events", url: "/events" }, // Add this line to include a link to the events page
+    { title: "Events", url: "/events" }, // Add this line to include a link to the events page
+    {title: "Team",url:"/team"},
 ];
 
 const headerClass = isEventsPage
