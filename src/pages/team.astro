@@ -11,48 +11,52 @@ const teamMembers = [
   {
     name: "Shiv Vardhan Singh",
     position: "Vice President",
-image: "/images/team/shiv.jpg",
-    bio: "Shiv specialises in current emerging web technologies"
+    image: "/images/team/shiv.jpg",
+    bio: "Shiv specialises in current emerging web technologies."
   },
   {
-    name: "Devashish mishra",
+    name: "Devashish Mishra",
     position: "Tech Lead",
-    image: "/images/team/Devashish.jpg",
+    image: "/images/team/devashish.jpg",
     bio: "Backend developer specializing in building robust, scalable, and efficient server-side systems."
-},{
+  },
+  {
     name: "Dhruv Bhardwaj",
     position: "Tech Lead",
     image: "/images/team/dhruv.jpg",
     bio: "Backend Game developer specializing in building robust, scalable, and efficient server-side systems."
-},{
+  },
+  {
     name: "Akansha Jha",
     position: "Event Head",
     image: "/images/team/Akansha.jpg",
-bio: "Akansha is the key event organiser and manager in our community ensuring the smooth ongoing of Events organised by/in community."
-},{
-name: "Nalin Dalal",
-position:"Open Source Maintainer",
-images:"/images/team/nalin.jpg",
-bio:"Nalin is the key joining all these technologies and github maintainer in the core community team."
-},
-{
-name: "Muskan Soni",
-position:"Media & Publicity Head",
-images:"/images/team/muskan.jpg",
-bio:"Media and Publicity Head with expertise in strategic communication, brand promotion, and audience engagement."
-},
-{
-name: "Shiwang Kumar Rai",
-position:"Head Discipline",
-images:"/images/team/Shiwang.jpg",
-bio:"Head of Discipline, ensuring excellence through structure, integrity, and accountability."
-},
+    bio: "Akansha is the key event organiser and manager in our community ensuring the smooth ongoing of events organised by/in community."
+  },
+  {
+    name: "Nalin Dalal",
+    position: "Open Source Maintainer",
+    image: "/images/team/nalin.jpg",
+    bio: "Nalin is the key joining all these technologies and GitHub maintainer in the core community team."
+  },
+  {
+    name: "Muskan Soni",
+    position: "Media & Publicity Head",
+    image: "/images/team/muskan.jpg",
+    bio: "Media and Publicity Head with expertise in strategic communication, brand promotion, and audience engagement."
+  },
+  {
+    name: "Shiwang Kumar Rai",
+    position: "Head Discipline",
+    image: "/images/team/Shiwang.jpg",
+    bio: "Head of Discipline, ensuring excellence through structure, integrity, and accountability."
+  },
 ];
 ---
 
 <html>
   <head>
     <title>Our Team</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
   </head>
   <body>
     <h1>Meet Our Team</h1>
@@ -65,10 +69,102 @@ bio:"Head of Discipline, ensuring excellence through structure, integrity, and a
 </html>
 
 <style>
+  /* Global Styles */
+  body {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    text-align: center;
+    color: #e3e3e3;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+
+  /* Team Container */
   .team-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 10px;
+  }
+
+  /* Team Member Styles */
+  .team-member {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member h2 {
+    font-size: 1.5rem;
+    color: #e3e3e3;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .team-member p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 10px;
+  }
+
+  /* Hover Effect */
+  .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .team-member:hover img {
+    transform: scale(1.05);
+  }
+
+  .team-member:hover h2 {
+    color: #ffd700;
+  }
+
+  /* Background Animation */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff007f, #7a00ff, #00d9ff, #00ff6a);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 </style>
 

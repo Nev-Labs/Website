@@ -10,23 +10,75 @@ const { name, position, image, bio } = Astro.props;
 ---
 
 <div class="team-member">
-  <img src={image} alt={name} class="team-member-image" />
-  <h3>{name}</h3>
-  <p><strong>{position}</strong></p>
-  <p>{bio}</p>
+  <div class="image-container">
+    <img src={image} alt={name} class="team-member-image" />
+  </div>
+  <h3 class="team-member-name">{name}</h3>
+  <p class="team-member-position"><strong>{position}</strong></p>
+  <p class="team-member-bio">{bio}</p>
 </div>
 
 <style>
   .team-member {
+    background-color: #2a2a2a; /* Slightly lighter background for better contrast */
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
-    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* Added blur effect for a more modern touch */
   }
+
+  .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Space between image and text */
+  }
+
   .team-member-image {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    border: 3px solid #fff; /* White border around image */
+  }
+
+  .team-member-name {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+    font-weight: bold; /* Added font weight for more emphasis */
+  }
+
+  .team-member-position {
+    font-size: 1.1rem;
+    color: #f1c40f; /* Changed color to a more vibrant gold */
+    margin-top: 5px;
+  }
+
+  .team-member-bio {
+    font-size: 1rem;
+    color: #ccc; /* Lighter gray for bio text */
+    margin-top: 10px;
+  }
+
+  .team-member:hover .team-member-image {
+    transform: scale(1.1);
+  }
+
+  .team-member:hover .team-member-name {
+    color: #f39c12; /* Vibrant gold color when hovered */
   }
 </style>
 
